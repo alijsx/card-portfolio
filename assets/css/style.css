@@ -1,27 +1,7 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
 
-  /**
-   * colors
-   */
 
-  /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
@@ -543,6 +523,7 @@ main {
 .service-icon-box { margin-bottom: 10px; }
 
 .service-icon-box img { margin: auto; }
+
 
 .service-content-box { text-align: center; }
 
@@ -1559,6 +1540,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
+  .icoo{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+  }
+
 
 
   /**
@@ -1919,3 +1908,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 .metaa{
   color: rgb(231, 216, 127);
 }
+
+@media (max-width: 579px) {
+
+  .icoo{
+display:flow-root;
+justify-content: center;
+margin: auto;
+  }
+  
+}
+
+
