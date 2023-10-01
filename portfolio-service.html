@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Services | Ali Aalam</title>
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div class="container mt-5 text-light">
+    <h2 class="text-center">Portfolio Service Request</h2>
+    <form class="form" id="portfolioForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-input" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone / Whatsapp Number:</label>
+        <input type="tel" class="form-input" id="phone" name="phone" placeholder="Enter your phone / Whatsapp number" required>
+      </div>
+      <div class="form-group">
+        <label for="portfolioType">Portfolio Type:</label>
+        <select class=" form-control bg-dark text-light" id="portfolioType" name="portfolioType" required>
+          <option value="">Select portfolio type</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Mobile App Development">Mobile App Development</option>
+          <option value="Photography">Photography</option>
+          <option value="Illustration">Illustration</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Video Production">Video Production</option>
+          <option value="Content Writing">Content Writing</option>
+          <option value="SEO">SEO</option>
+          <option value="Social Media Management">Social Media Management</option>
+          <option value="Print Design">Print Design</option>
+          <option value="Branding">Branding</option>
+          <option value="Logo Design">Logo Design</option>
+          <option value="E-commerce">E-commerce</option>
+          <option value="Game Development">Game Development</option>
+          <option value="AR/VR Development">AR/VR Development</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Blockchain Development">Blockchain Development</option>
+          <option value="UI/UX Animation">UI/UX Animation</option>
+          <option value="Software Development">Software Development</option>
+          <option value="Music Production">Music Production</option>
+          <option value="Interior Design">Interior Design</option>
+          <option value="Event Management">Event Management</option>
+          <option value="Health and Fitness">Health and Fitness</option>
+          <option value="Fashion Design">Fashion Design</option>
+          <option value="Automotive Design">Automotive Design</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Landscape Design">Landscape Design</option>
+          <option value="Culinary Arts">Culinary Arts</option>
+          <option value="Education">Education</option>
+          <option value="Travel and Tourism">Travel and Tourism</option>
+          <option value="Gardening and Landscaping">Gardening and Landscaping</option>
+          <option value="Fitness and Wellness">Fitness and Wellness</option>
+          <option value="Animals and Pets">Animals and Pets</option>
+          <option value="Finance and Investments">Finance and Investments</option>
+          <option value="Technology and Gadgets">Technology and Gadgets</option>
+          <option value="Parenting">Parenting</option>
+          <option value="Art and Craft">Art and Craft</option>
+          <option value="Food and Beverages">Food and Beverages</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Environmental Science">Environmental Science</option>
+          <option value="Astronomy and Space">Astronomy and Space</option>
+          <option value="Science and Innovation">Science and Innovation</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget:</label>
+        <input type="number" class="form-input" id="budget" name="budget" placeholder="Enter your budget in PKR" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+      </div>
+      <button class="form-btn" type="submit" data-form-btn>
+        <!-- <ion-icon name="paper-plane"></ion-icon> -->
+     
+
+          <lord-icon
+          src="https://cdn.lordicon.com/gbtkzxxm.json"
+          trigger="hover"
+          colors="primary:#ffc738"
+          style="width:40px;height:40px">
+      </lord-icon>
+
+
+
+
+
+
+     
+      </button>
+    </form>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    emailjs.init("qCT3g8mTLaaQ9CG05"); // Replace with your Email.js User ID
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".form");
+  
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        // Collect form data
+        const formData = new FormData(form);
+  
+        // Debugging: Log the collected form data
+        console.log("Form Data:", Object.fromEntries(formData));
+  
+        // Send email using Email.js
+        emailjs.send("service_60jrkpr", "template_ro6uadc", Object.fromEntries(formData))
+          .then(function (response) {
+            console.log("Email sent successfully:", response);
+  
+            // Display a success toast
+            const successToast = createToast("Form submitted successfully! We will get in touch with you soon.", "toast-success");
+            showToast(successToast);
+  
+            // Navigate to index.html after displaying the toast
+            setTimeout(() => {
+              window.location.href = "index.html";
+            }, 5000); // Navigate after 5 seconds (adjust as needed)
+          })
+          .catch(function (error) {
+            console.error("Email sending failed:", error);
+  
+            // Display an error toast
+            const errorToast = createToast("Form submission failed. Please try again later.", "toast-error");
+            showToast(errorToast);
+          });
+      });
+  
+      // Function to create a toast element
+      function createToast(message, className) {
+        const toast = document.createElement("div");
+        toast.classList.add("toast", className);
+        toast.textContent = message;
+        return toast;
+      }
+  
+      // Function to display a toast
+      function showToast(toast) {
+        const toastContainer = document.createElement("div");
+        toastContainer.classList.add("toast-container");
+        toastContainer.appendChild(toast);
+        document.body.appendChild(toastContainer);
+  
+        // Wait for the next frame to trigger the CSS animation
+        requestAnimationFrame(() => {
+          toast.style.opacity = 1;
+        });
+  
+        // Remove the toast after a few seconds (adjust the time as needed)
+        setTimeout(() => {
+          toast.style.opacity = 0;
+          setTimeout(() => {
+            toastContainer.remove();
+          }, 300); // Adjust the duration to match your CSS transition duration
+        }, 5000); // Adjust the time for how long you want the toast to be displayed
+      }
+    });
+  </script>
+  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+  
