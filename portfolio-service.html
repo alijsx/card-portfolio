@@ -107,20 +107,47 @@
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    emailjs.init("qCT3g8mTLaaQ9CG05"); // Replace with your Email.js User ID
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector(".form");
-  
-      form.addEventListener("submit", function (e) {
+   emailjs.init("qCT3g8mTLaaQ9CG05"); // Replace with your Email.js User ID
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".form");
+
+    function validateName(name) {
+        const words = name.trim().split(' ');
+        return words.length <= 3;
+    }
+
+    function validatePhoneNumber(phone) {
+        const phoneRegex = /^(\+92|0092|0)?[3456789]\d{9}$/;
+        return phoneRegex.test(phone);
+    }
+
+    function validateBudget(budget) {
+        return parseFloat(budget) >= 1000;
+    }
+
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
-  
-        // Collect form data
+
         const formData = new FormData(form);
-  
-        // Debugging: Log the collected form data
-        console.log("Form Data:", Object.fromEntries(formData));
-  
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const budget = formData.get('budget');
+
+        if (!validateName(name)) {
+            alert('Enter Your Name Correct');
+            return;
+        }
+
+        if (!validatePhoneNumber(phone)) {
+            alert('Please enter Your  phone number Correct');
+            return;
+        }
+
+        if (!validateBudget(budget)) {
+            alert('Please enter a budget of at least 1000 PKR.');
+            return;
+        }
         // Send email using Email.js
         emailjs.send("service_60jrkpr", "template_ro6uadc", Object.fromEntries(formData))
           .then(function (response) {
