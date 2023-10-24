@@ -865,17 +865,24 @@
 
               </a>
             </li>
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="https://restaurant-landing-page-omega.vercel.app/">
 
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
+                  <img src="./assets/images/resturant.png" alt="Resturant App Landing Page" loading="lazy">
+                </figure>
 
+                <h3 class="project-title">Resturant App Landing Page</h3>
 
+                <p class="project-category">Web design</p>
+                <p class="project-category">A React.js restaurant landing page</p>
 
-
-
-
-
-
-
+              </a>
+            </li>
           </ul>
 
         </section>
@@ -1111,8 +1118,6 @@
 
             <button class="form-btn" type="submit" data-form-btn>
               <!-- <ion-icon name="paper-plane"></ion-icon> -->
-           
-
                 <lord-icon
                 src="https://cdn.lordicon.com/gbtkzxxm.json"
                 trigger="hover"
@@ -1160,7 +1165,6 @@
 
 </body>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   emailjs.init("qCT3g8mTLaaQ9CG05"); // Replace with your Email.js User ID
 
@@ -1178,7 +1182,7 @@
       console.log("Form Data:", Object.fromEntries(formData));
 
       // Send email using Email.js
-      emailjs.send("service_phog79g", "template_mn8pllf", Object.fromEntries(formData))
+      emailjs.send("service_phog79g", "template_ro6uadc", Object.fromEntries(formData))
         .then(function (response) {
           console.log("Email sent successfully:", response);
 
