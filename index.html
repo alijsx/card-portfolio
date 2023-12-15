@@ -101,7 +101,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="aliaalam404@proton.me" class="contact-link">aliaalam404@proton.me</a>
+              <a href="programmer@aliaalam.xyz" class="contact-link">Programmer@aliaalam.xyz</a>
             </div>
 
           </li>
@@ -242,10 +242,10 @@
 
         <section class="about-text">
           <p>
-            I'm Ali Aalam ,Based in Pakistan 🇵🇰
-            I'm a skilled <b class="metaa"><u>@Meta Certified</u></b> Front-End Developer, specializing in the React.js
+            I'm Ali Aalam ,Based in Pakistan 🇵🇰 Currently at <b class="metaa"><u>@dzinemedia</u></b>
+            I'm a skilled <b class="metaa"><u>@Meta Certified</u></b> Front-End Developer,  specializing in the React.js
             proficiently translating design mock-ups and
-            user experience concepts into interactive and responsive web applications
+            user experience concepts into interactive and responsive web applications 
           </p>
           <p>
             My job is to build your website so that it is functional and user-friendly but at the same time attractive.
@@ -583,12 +583,23 @@
           </div>
 
           <ol class="timeline-list">
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">React.js Developer  at <b class="metaa"><u>@dzinemedia</u></b></h4>
+
+              <span id="timeDifference"></span>
+
+              <p class="timeline-text">
+                Developend Websites on the front-end development in React.js, vite.js, Tailwind CSS, Bootstrap , Javascript
+              </p>
+
+            </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">React.js Internee</h4>
+              <h4 class="h4 timeline-item-title">React.js Internee  at <b class="metaa"><u>@Preesoft</u></b></h4>   </h4> 
 
-              <span>2023 — Present</span>
+              <span> Jun - Sep 2023</span>
 
               <p class="timeline-text">
                 Worked on the front-end development in React.js, Firebase, Tailwind CSS, Bootstrap , Javascript
@@ -744,6 +755,18 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">React.JS</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 65%;"></div>
+              </div>
+
+            </li>
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Vite.JS</h5>
                 <data value="65">65%</data>
               </div>
 
@@ -757,6 +780,17 @@
               <div class="title-wrapper">
                 <h5 class="h5">Bootstrap</h5>
                 <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Tailwind Css</h5>
+                <data value="60">60%</data>
               </div>
 
               <div class="skill-progress-bg">
@@ -1286,6 +1320,25 @@
 
   gtag('config', 'G-S7S013FCS1');
 </script>
+<script>
+  // Date of November 6, 2023
+  const startDate = new Date('2023-11-06');
+  
+  // Current date
+  const currentDate = new Date();
 
+  // Calculate the difference in milliseconds
+  const timeDifference = currentDate - startDate;
+
+  // Calculate years, months, and days
+  const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+  const months = Math.floor((timeDifference % (365.25 * 24 * 60 * 60 * 1000)) / (30.44 * 24 * 60 * 60 * 1000));
+  const days = Math.floor((timeDifference % (30.44 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000));
+
+  // Display the result in the span element
+  const spanElement = document.getElementById('timeDifference');
+  spanElement.textContent = `${years} years, ${months} months, and ${days} days since Nov 6 2023`;
+
+</script>
 
 </html>
